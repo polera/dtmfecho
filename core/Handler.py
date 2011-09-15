@@ -1,3 +1,8 @@
+__author__ = 'James Polera'
+__email__  = 'james@uncryptic.com'
+__since__  = '2011-09-14'
+
+
 from lxml import etree
 
 class Handler(object):

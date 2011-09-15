@@ -4,8 +4,7 @@ __since__  = '2011-09-14'
 
 from flask import Flask, request
 app = Flask(__name__)
-from Receiver import Receiver
-from Handler import Handler
+from core import Receiver, Handler
 
 @app.route("/", methods=['GET'])
 def index():

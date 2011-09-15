@@ -1,3 +1,8 @@
+__author__ = 'James Polera'
+__email__  = 'james@uncryptic.com'
+__since__  = '2011-09-14'
+
+
 from lxml import etree
 
 class Receiver(object):
@@ -19,8 +24,3 @@ class Receiver(object):
         say      = etree.SubElement(self.root,"Say")
         say.text = "Enter some digits that you would like to be echoed, then press pound."
         return etree.tostring(self.root, xml_declaration=True, encoding='UTF-8')
-        
-
-if __name__ == "__main__":
-    r = Receiver()
-    print r.pickup("/echo","POST")
