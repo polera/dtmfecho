@@ -22,11 +22,16 @@ class Handler(object):
         say = etree.SubElement(self.root, "Say")
         say.text = "Goodbye"
 
+    def hangup(self):
+        hangup = etree.SubElement(self.root,"Hangup")
+
+
     def read_back(self):
         print "DTMF %s" % self.dtmf_string
         for digit in self.dtmf_string:
             say = etree.SubElement(self.root, "Say")
             say.text = "%s " % str(digit)
         self.say_goodbye()
+        self.hangup()
         return etree.tostring(self.root)
     

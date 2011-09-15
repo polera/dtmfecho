@@ -21,6 +21,6 @@ class Receiver(object):
 
     def pickup(self, handler, method):
         gatherer = etree.SubElement(self.root,"Gather",action=handler,method=method)
-        say      = etree.SubElement(self.root,"Say")
+        say      = etree.SubElement(gatherer,"Say")
         say.text = "Enter some digits that you would like to be echoed, then press pound."
         return etree.tostring(self.root, xml_declaration=True, encoding='UTF-8')

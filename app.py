@@ -8,6 +8,10 @@ from core import Receiver, Handler
 
 @app.route("/", methods=['GET'])
 def index():
+    return "You probably don't belong here.  Move along."
+
+@app.route("/answer", methods=['GET'])
+def answer():
     r = Receiver()
     return r.pickup("/echo","POST")
 
